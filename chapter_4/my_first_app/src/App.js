@@ -17,14 +17,13 @@ class App extends Component {
         <Rating rating="4" />
         <Rating rating="5" />
 
-        {/* <div className="App">
+        <div className="App">
           <Products />
-        </div> */}
+        </div>
       </div>
 
     );
   }
 }
-
 
 export default App;
