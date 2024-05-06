@@ -59,18 +59,13 @@ class Products extends Component {
 export default Products;
 
 
-/**
+      //   {listProducts.length > 0 && 
+      //     <ul>{listProducts}</ul>     
+      //   }
+      //   {listProducts.length == 0 && 
+      //     <ul>No Products to display</ul>     
+      //   }   
 
-
-        {listProducts.length > 0 && 
-          <ul>{listProducts}</ul>     
-        }
-        {listProducts.length == 0 && 
-          <ul>No Products to display</ul>     
-        }   
-
-            <div>
+      //       <div>
      
-      </div>
- * 
- */
+      // </div>

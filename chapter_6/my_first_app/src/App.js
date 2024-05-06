@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import JumboTronComponent from './JumboTronComponent';
-
+import UserForm from './UserForm';
+import Products from './Products';
 
 class App extends Component {
-  render() {
+  render() {        
     return (
       <div>
-        <h1>My First React App!</h1>
-        <JumboTronComponent />
+        <UserForm />        
+           <h1>hello</h1>     
       </div>
     );
   }
 }
 
-
 export default App;
+
+
