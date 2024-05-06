@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import Products from './Products';
+import JumboTronComponent from './JumboTronComponent';
+
 
 class App extends Component {
-  render() {        
+  render() {
     return (
       <div>
-        <Products />        
+        <h1>My First React App!</h1>
+        <JumboTronComponent />
       </div>
     );
   }
 }
+
 
 export default App;
