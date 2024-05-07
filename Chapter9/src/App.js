@@ -10,7 +10,6 @@ import 'firebase/compat/database';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import UserForm from './UserForm';
 
-
 class App extends Component {
   constructor() {
     super()
