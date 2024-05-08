@@ -8,6 +8,7 @@ import {Nav, NavLink} from 'react-bootstrap';
 
 class User extends Component {
 
+    
     constructor(props) {
         super(props);
         this.state = {
