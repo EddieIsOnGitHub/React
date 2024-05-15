@@ -1,44 +1,44 @@
-import './App.css';
+import React, { useReducer} from 'react';
+import ToDoList from './ToDoList'
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { Component } from 'react';
-import User from './User';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
-import 'firebase/compat/database';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import UserForm from './UserForm';
+const todosInitialState = { 
+  todos:[]
+};
 
-class App extends Component {
-  constructor() {
-    super()
-    console.log(firebase);
-  }
+export const TodosContext = React.createContext()
 
-  render() {
-    return (
-      <div>
-        <BrowserRouter>
-          <div>
-            <Routes>
-              <Route path="/add" element={<UserForm />} />
-              <Route path="/edit/:id" element={<UserForm />} />
-              <Route exact path="/" element={<User />} />
-              <Route path="/*" element={<NotFound />} />
-            </Routes>
-          </div>
-        </BrowserRouter>
-      </div>
-    );
-  }
+function App (){
+  const [state, dispatch] = useReducer(todosReducer,todosInitialState)
+
+  return (
+    <TodosContext.Provider value={{state,dispatch}}>      
+      <ToDoList />
+    </TodosContext.Provider>    
+  )
 }
 
+function todosReducer(state, action){ 
+  switch(action.type){     
+    case 'get':     
+      return {...state,todos:action.payload}    
+    case 'add':      
+      const addedToDos = [...state.todos,action.payload]
+      return {...state,todos:addedToDos}
+    case 'delete':
+      const filteredTodoState = state.todos.filter( todo => todo.id !== action.payload.id)
+      return {...state, todos: filteredTodoState}
+    case 'edit':   
+      const updatedToDo = {...action.payload} 
+      const updatedToDoIndex = state.todos.findIndex(t => t.id === action.payload.id)
+      const updatedToDos = [
+        ...state.todos.slice(0,updatedToDoIndex),
+        updatedToDo,
+        ...state.todos.slice(updatedToDoIndex + 1)
+      ];
+      return {...state, todos: updatedToDos}      
+    default:
+      return todosInitialState
+  }
+}
 
 export default App;
-
-class NotFound extends Component {
-  render() {
-    return <div>Not Found</div>
-  }
-}
