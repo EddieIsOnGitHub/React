@@ -17,6 +17,7 @@ function App (){
   )
 }
 
+
 function todosReducer(state, action){ 
   switch(action.type){     
     case 'get':     
@@ -40,5 +41,6 @@ function todosReducer(state, action){
       return todosInitialState
   }
 }
+
 
 export default App;
