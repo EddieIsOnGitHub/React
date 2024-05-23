@@ -70,6 +70,7 @@ function ToDoList(){
                             setEditMode(true)
                             setEditTodo(todo)
                         }}>  
+                        
                             <Button variant="link">Edit</Button>   
                         </td>
                         <td onClick={async () => {                            
