@@ -18,6 +18,7 @@ function App (){
 }
 
 
+
 function todosReducer(state, action){ 
   switch(action.type){     
     case 'get':     
