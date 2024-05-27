@@ -17,7 +17,7 @@ function App() {
       <ToDoList />
     </TodosContext.Provider>
   )
-}
+} 
 
 function todosReducer(state, action) {
   switch (action.type) {
