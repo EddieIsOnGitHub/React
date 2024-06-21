@@ -5,12 +5,7 @@ import './assets/styles/index.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from 'react-router-dom';
+import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider,} from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import PrivateRoute from './components/PrivateRoute';
 import AdminRoute from './components/AdminRoute';
